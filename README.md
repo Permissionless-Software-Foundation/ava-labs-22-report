@@ -42,3 +42,11 @@ Any crypto project has it's challenges, and this one was no different.
 - **Dependency Challenges** - There was a three month gap between Gary finishing the proof of concept code, and Chris integrating his work into the final app. During that time, [AvalanchJS stopped compiling](https://github.com/ava-labs/avalanchejs/issues/622) forcing us to use an older version. Also the full node transitioned from [cb58 to hex format](https://github.com/ava-labs/avalanchejs/issues/623) which broke a lot of code and requied significant refactoring.
 
 Despite these challenges, our team was able to complete primary objective of the grant: To create an app for peer-to-peer trading of tokens on the X-Chain.
+
+## Future Progress
+It is hoped that this work will lead to additional grants from AVA Labs in order to complete the progress on this app. While it's functional, it's clunky and prone to errors. The user experience is very poor. Here are some of the major features that could be improved with additional funding:
+
+- **Robust Error Handling** - To complete each phase of the SWaP protocol, a complex series of network calls are made. If any of these network calls fail, the user is required to start over. Better handling of errors, and automatic retry of network calls, would go a long way towards creating a better user experience.
+- **Port P2WDB to AVAX** - The [P2WDB](https://p2wdb.com) exists only on the Bitcoin Cash blockchain, which requires users to have some BCH and PSF tokens in order to write to it and complete a trade. If the P2WDB was ported to the AVAX X-Chain, it would remove this clunky user experience and make every run natively on the X-Chain.
+- **Standalone Buyer App** - While a *Maker* must run a copy of `avax-dex` in order to create and complete trades, a *Taker* does not. Will additional work, it would be possible to make a stand-alone Android app that allows users to brows the market and buy tokens, without any need for a back-end server. This would create an ideal user experience.
+- **Allow Buy Orders** - Currently the app is only designed for *selling* tokens. But the SWaP protocol can also support *buy* Orders. Currently Makers only create Orders to sell tokens, but Makers could also create Orders to buy tokens.
