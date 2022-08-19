@@ -6,14 +6,6 @@ The application for the grant included [this presentation to Shapeshift DAO](htt
 
 The scope of the grant was to create a graphical user interface (GUI) for trading tokens on the X-Chain, leveraging the SWaP protocol. At the start it was simply a proof-of-concept. The GUI now exists and functions, but additional funding will be required to improve the current user experience.
 
-## Challenges
-- Financial
-  - Unprepared for the structure of the grant, half up front half at the end.
-  - Drop in crypto prices
-- Dependencies
-  - AvalanchJS no longer compiles with Browserify
-  - Full node change from cb58 to hex broke a lot of code
-
 ## Introduction to SWaP Protocol
 SWaP is an acronym that stands for *Signal, Watch, and Pay*. These are the three (3) primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions). The description below tries to describe the process in a non-technical manner.
 
@@ -31,3 +23,22 @@ Bob is known as a *Taker*, because he just took the Offer by generating a Counte
 Alice's local instance of the P2WDB triggers a webhook to her instance of `avax-dex`, when Bob's Counter Offer is written to the P2WDB. Alice's instance of `avax-dex` reads in the Counter Offer and validates it, ensuring that the transaction meets the terms she set in the Offer. If the Counter Offer passes validation, her instance of `avax-dex` signs the transaction and broadcasts it to the network.
 
 The trade is then complete. Alice has the AVAX and Bob has the tokens. Both parties got what the wanted, and neither party has the opportunity to take advantage of the other (trustless). The trade completes in a single on-chain transaction (atomic), transferring the tokens and AVAX instantly and at the same time, with no need for escrow.
+
+## Contributors
+The creation of this app was a collaboration by three developers:
+- [Chris Troutner](https://github.com/christroutner)
+- [Gary Nadir](https://github.com/MezzMar)
+- [Daniel Gonzalez](https://github.com/danielhumgon)
+
+Gary did the heavy-lifting by developing most of the back-end and X-chain specific code. Daniel and Chris both contributed heavily to the graphical user interface. Chris was the lead architect and researcher.
+
+## Challenges
+Any crypto project has it's challenges, and this one was no different.
+
+- **Geographical Challenges** - Gary and Daniel are both located in Venezuela. Although both are fluent in English, the spotty internet in Venezuela often made meetings and communication difficult.
+
+- **Financial Challenges** - We were unprepared for the financial structure of the grant, with half being paid upfront and half being paid at the end. This meant we effectively had half the amount of money we had budgeted. In addition, there was a massive crash in cryptocurrency prices, which negatively effected the financial cushion that we had set aside.
+
+- **Dependency Challenges** - There was a three month gap between Gary finishing the proof of concept code, and Chris integrating his work into the final app. During that time, [AvalanchJS stopped compiling](https://github.com/ava-labs/avalanchejs/issues/622) forcing us to use an older version. Also the full node transitioned from [cb58 to hex format](https://github.com/ava-labs/avalanchejs/issues/623) which broke a lot of code and requied significant refactoring.
+
+Despite these challenges, our team was able to complete primary objective of the grant: To create an app for peer-to-peer trading of tokens on the X-Chain.
