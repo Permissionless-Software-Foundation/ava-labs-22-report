@@ -15,7 +15,7 @@ The scope of the grant was to create a graphical user interface (GUI) for tradin
   - Full node change from cb58 to hex broke a lot of code
 
 ## Introduction to SWaP Protocol
-SWaP is an acronym that stands for *Signal, Watch, and Pay*. These are the three primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions). The description below tries to describe the process in a non-technical manner.
+SWaP is an acronym that stands for *Signal, Watch, and Pay*. These are the three (3) primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions). The description below tries to describe the process in a non-technical manner.
 
 ![SWaP Protocol Workflow](./diagrams/swap-workflow.png)
 
@@ -24,6 +24,8 @@ In the first phase, Alice has a token that she wants to sell on the open market.
 
 ### Watch
 Bob wants to buy tokens, so he uses the GUI to browse tokens for sale on the open market. He sees Alice's listing and clicks the Buy button. His instance of `avax-dex` generates a *Counter Offer*. This is a partially-signed transaction based on data in the Offer. The Counte Offer is uploaded to the P2WDB.
+
+Bob is known as a *Taker*, because he just took the Offer by generating a Counter Offer.
 
 ### Pay
 Alice's local instance of the P2WDB triggers a webhook to her instance of `avax-dex`, when Bob's Counter Offer is written to the P2WDB. Alice's instance of `avax-dex` reads in the Counter Offer and validates it, ensuring that the transaction meets the terms she set in the Offer. If the Counter Offer passes validation, her instance of `avax-dex` signs the transaction and broadcasts it to the network.
