@@ -44,7 +44,7 @@ Any crypto project has it's challenges, and this one was no different.
 Despite these challenges, our team was able to complete primary objective of the grant: To create an app for peer-to-peer trading of tokens on the X-Chain.
 
 ## Future Progress
-It is hoped that this work will lead to additional grants from AVA Labs in order to complete the progress on this app. While it's functional, it's clunky and prone to errors. The user experience is very poor. Here are some of the major features that could be improved with additional funding:
+It is hoped that this work will lead to additional grants between the PSF and AVA Labs, in order to complete the progress on this app. While it's functional, it's clunky and prone to errors. The user experience is very poor. Here are some of the major features that could be improved with additional funding:
 
 - **Robust Error Handling** - To complete each phase of the SWaP protocol, a complex series of network calls are made. If any of these network calls fail, the user is required to start over. Better handling of errors, and automatic retry of network calls, would go a long way towards creating a better user experience.
 - **Port P2WDB to AVAX** - The [P2WDB](https://p2wdb.com) exists only on the Bitcoin Cash blockchain, which requires users to have some BCH and PSF tokens in order to write to it and complete a trade. If the P2WDB was ported to the AVAX X-Chain, it would remove this clunky user experience and make every run natively on the X-Chain.
