@@ -43,10 +43,16 @@ Any crypto project has it's challenges, and this one was no different.
 
 Despite these challenges, our team was able to complete primary objective of the grant: To create an app for peer-to-peer trading of tokens on the X-Chain.
 
+## Bonus Progress
+Through the development of [avax-dex](https://github.com/Permissionless-Software-Foundation/avax-dex), additional assets were created that help the Avalanche developer community:
+
+- [minimal-avax-wallet](https://www.npmjs.com/package/minimal-avax-wallet) is a JavaScript wallet library that developers can use to add AVAX X-chain wallet functionality to their app. They can use high-level commands, and do not need to learn the low-level details of constructing transactions.
+- [psf-avax-wallet](https://github.com/Permissionless-Software-Foundation/psf-avax-wallet) is a command-line wallet app. This is a convenient tool for working with many X-Chain wallets. It's a great rapid-prototyping tool because there is no graphical user interface (GUI). Because each command is self-contained, it's also a great way to share code examples.
+
 ## Future Progress
 It is hoped that this work will lead to additional grants between the PSF and AVA Labs, in order to complete the progress on this app. While it's functional, it's clunky and prone to errors. The user experience is very poor. Here are some of the major features that could be improved with additional funding:
 
 - **Robust Error Handling** - To complete each phase of the SWaP protocol, a complex series of network calls are made. If any of these network calls fail, the user is required to start over. Better handling of errors, and automatic retry of network calls, would go a long way towards creating a better user experience.
-- **Port P2WDB to AVAX** - The [P2WDB](https://p2wdb.com) exists only on the Bitcoin Cash blockchain, which requires users to have some BCH and PSF tokens in order to write to it and complete a trade. If the P2WDB was ported to the AVAX X-Chain, it would remove this clunky user experience and make every run natively on the X-Chain.
-- **Standalone Buyer App** - While a *Maker* must run a copy of `avax-dex` in order to create and complete trades, a *Taker* does not. Will additional work, it would be possible to make a stand-alone Android app that allows users to brows the market and buy tokens, without any need for a back-end server. This would create an ideal user experience.
-- **Allow Buy Orders** - Currently the app is only designed for *selling* tokens. But the SWaP protocol can also support *buy* Orders. Currently Makers only create Orders to sell tokens, but Makers could also create Orders to buy tokens.
+- **Port P2WDB to AVAX** - The [P2WDB](https://p2wdb.com) exists only on the Bitcoin Cash blockchain, which requires users to have some BCH and PSF tokens in order to write to it and complete a trade. If the P2WDB was ported to the AVAX X-Chain, it would remove this clunky user experience and the entire app would run natively on the X-Chain.
+- **Standalone Buyer App** - While a *Maker* must run a copy of `avax-dex` in order to create and complete trades, a *Taker* does not. With additional work, it would be possible to make a stand-alone Android app that allows users to browse the market and buy tokens, without any need for a back-end server. This would create an ideal user experience.
+- **Allow Buy Orders** - Currently the app is only designed for *selling* tokens. But the SWaP protocol can also support *buy* Orders. Said another way, Makers only create Orders to sell tokens, but Makers could also create Orders to buy tokens. This additional functionality would allow for a more expressive market.
