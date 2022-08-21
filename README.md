@@ -6,6 +6,15 @@ The application for the grant included [this presentation to Shapeshift DAO](htt
 
 The scope of the grant was to create a graphical user interface (GUI) for trading tokens on the X-Chain, leveraging the SWaP protocol. At the start it was simply a proof-of-concept. The GUI now exists and functions, but additional funding will be required to improve the current user experience.
 
+## Demonstration
+
+Four introductory videos have been created, to help AVAX developers use [avax-dex](https://github.com/Permissionless-Software-Foundation/avax-dex) to buy and sell tokens on the X-Chain:
+
+- [Installation of avax-dex Docker containers](https://youtu.be/RZIVr8AIXLo)
+- [Selling tokens on avax-dex](https://youtu.be/P8mL50wSQi4)
+- [Buying tokens on avax-dex](https://youtu.be/qXLYVHQL7-Q)
+- [Recovering funds from an avax-dex wallet](https://youtu.be/FTaDfz15Obs)
+
 ## Introduction to SWaP Protocol
 SWaP is an acronym that stands for *Signal, Watch, and Pay*. These are the three (3) primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions). The description below tries to describe the process in a non-technical manner.
 
