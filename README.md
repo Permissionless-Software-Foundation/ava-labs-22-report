@@ -15,6 +15,10 @@ Four introductory videos have been created, to help AVAX developers use [avax-de
 - [Buying tokens on avax-dex](https://youtu.be/qXLYVHQL7-Q)
 - [Recovering funds from an avax-dex wallet](https://youtu.be/FTaDfz15Obs)
 
+A live demo site is available for viewing tokens available on the marketplace. Buying tokens is disabled in the demo, as this app is designed to be run on a personal computer, and not served from a server like this demo is.
+
+- [Live demo of avax-dex](https://avax-dex.fullstack.cash)
+
 ## Introduction to SWaP Protocol
 SWaP is an acronym that stands for *Signal, Watch, and Pay*. These are the three (3) primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions). The description below tries to describe the process in a non-technical manner.
 
