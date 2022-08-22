@@ -15,12 +15,12 @@ Four introductory videos have been created, to help AVAX developers use [avax-de
 - [Buying tokens on avax-dex](https://youtu.be/qXLYVHQL7-Q)
 - [Recovering funds from an avax-dex wallet](https://youtu.be/FTaDfz15Obs)
 
-A live demo site is available for viewing tokens available on the marketplace. Buying tokens is disabled in the demo, as this app is designed to be run on a personal computer, and not served from a server like this demo is.
+A live demo site is available for viewing tokens available on the marketplace. Buying tokens is disabled in the demo, as this app is designed to be run on a personal computer, and not served from a server like the demo.
 
 - [Live demo of avax-dex](https://avax-dex.fullstack.cash)
 
 ## Introduction to SWaP Protocol
-SWaP is an acronym that stands for *Signal, Watch, and Pay*. These are the three (3) primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions). The description below tries to describe the process in a non-technical manner.
+SWaP is an acronym that stands for *Signal, Watch, and Pay*. There are the three (3) primary phases of the protocol. A workflow diagram illustrates the phases below. It describes how two users, Alice and Bob, complete a token trade with one another. There are specific words used to describe the process, which are capitalized. The explanation below tries to describe the process in a non-technical manner. For definitions and technical description, read the [developer documentation](https://github.com/Permissionless-Software-Foundation/bch-dex/tree/master/dev-docs#definitions).
 
 ![SWaP Protocol Workflow](./diagrams/swap-workflow.png)
 
@@ -35,7 +35,7 @@ Bob is known as a *Taker*, because he just took the Offer by generating a Counte
 ### Pay
 Alice's local instance of the P2WDB triggers a webhook to her instance of `avax-dex`, when Bob's Counter Offer is written to the P2WDB. Alice's instance of `avax-dex` reads in the Counter Offer and validates it, ensuring that the transaction meets the terms she set in the Offer. If the Counter Offer passes validation, her instance of `avax-dex` signs the transaction and broadcasts it to the network.
 
-The trade is then complete. Alice has the AVAX and Bob has the tokens. Both parties got what the wanted, and neither party has the opportunity to take advantage of the other (trustless). The trade completes in a single on-chain transaction (atomic), transferring the tokens and AVAX instantly and at the same time, with no need for escrow.
+The trade is then complete. Alice has the AVAX and Bob has the tokens. Both parties got what the wanted, and neither party has the opportunity to take advantage of the other (trustless). The trade completes in a single on-chain transaction (atomic), transferring the tokens and AVAX instantly and at the same time, with no need for escrow or intermediaries.
 
 ## Contributors
 The creation of this app was a collaboration by three developers:
@@ -50,22 +50,22 @@ Any crypto project has it's challenges, and this one was no different.
 
 - **Geographical Challenges** - Gary and Daniel are both located in Venezuela. Although both are fluent in English, the spotty internet in Venezuela often made meetings and communication difficult.
 
-- **Financial Challenges** - We were unprepared for the financial structure of the grant, with half being paid upfront and half being paid at the end. This meant we effectively had half the amount of money we had budgeted. In addition, there was a massive crash in cryptocurrency prices, which negatively effected the financial cushion that we had set aside.
+- **Financial Challenges** - We were unprepared for the financial structure of the grant, with half being paid upfront and half being paid at the end. This meant we effectively had half the amount of money we had budgeted. In addition, there was a massive crash in cryptocurrency prices during the execution of this grant, which negatively effected the financial cushion that we had set aside.
 
-- **Dependency Challenges** - There was a three month gap between Gary finishing the proof of concept code, and Chris integrating his work into the final app. During that time, [AvalanchJS stopped compiling](https://github.com/ava-labs/avalanchejs/issues/622) forcing us to use an older version. Also the full node transitioned from [cb58 to hex format](https://github.com/ava-labs/avalanchejs/issues/623) which broke a lot of code and requied significant refactoring.
+- **Dependency Challenges** - There was a three month gap between Gary finishing the prototype code, and Chris integrating it into the final app. During that time, [AvalanchJS stopped compiling](https://github.com/ava-labs/avalanchejs/issues/622) forcing us to use an older version. Also the full node transitioned from [cb58 to hex format](https://github.com/ava-labs/avalanchejs/issues/623) which broke a lot of code and requied significant refactoring.
 
-Despite these challenges, our team was able to complete primary objective of the grant: To create an app for peer-to-peer trading of tokens on the X-Chain.
+Despite these challenges, our team was able to complete primary objective of the grant: To create a graphical app for peer-to-peer trading of tokens on the X-Chain.
 
 ## Bonus Progress
 Through the development of [avax-dex](https://github.com/Permissionless-Software-Foundation/avax-dex), additional assets were created that help the Avalanche developer community:
 
-- [minimal-avax-wallet](https://www.npmjs.com/package/minimal-avax-wallet) is a JavaScript wallet library that developers can use to add AVAX X-chain wallet functionality to their app. They can use high-level commands, and do not need to learn the low-level details of constructing transactions.
+- [minimal-avax-wallet](https://www.npmjs.com/package/minimal-avax-wallet) is a node.js and web-browser JavaScript wallet library that developers can use to add AVAX X-chain wallet functionality to their app. They can use high-level commands, and do not need to learn the low-level details of constructing transactions.
 - [psf-avax-wallet](https://github.com/Permissionless-Software-Foundation/psf-avax-wallet) is a command-line wallet app. This is a convenient tool for working with many X-Chain wallets. It's a great rapid-prototyping tool because there is no graphical user interface (GUI). Because each command is self-contained, it's also a great way to share code examples.
 
 ## Future Progress
-It is hoped that this work will lead to additional grants between the PSF and AVA Labs, in order to complete the progress on this app. While it's functional, it's clunky and prone to errors. The user experience is very poor. Here are some of the major features that could be improved with additional funding:
+It is hoped that this work will lead to additional grants between the PSF and AVA Labs, in order to continue progress on this app. While it's functional, it's clunky and prone to errors. The user experience is very poor. Here are some of the major features that could be improved with additional funding:
 
 - **Robust Error Handling** - To complete each phase of the SWaP protocol, a complex series of network calls are made. If any of these network calls fail, the user is required to start over. Better handling of errors, and automatic retry of network calls, would go a long way towards creating a better user experience.
 - **Port P2WDB to AVAX** - The [P2WDB](https://p2wdb.com) exists only on the Bitcoin Cash blockchain, which requires users to have some BCH and PSF tokens in order to write to it and complete a trade. If the P2WDB was ported to the AVAX X-Chain, it would remove this clunky user experience and the entire app would run natively on the X-Chain.
-- **Standalone Buyer App** - While a *Maker* must run a copy of `avax-dex` in order to create and complete trades, a *Taker* does not. With additional work, it would be possible to make a stand-alone Android app that allows users to browse the market and buy tokens, without any need for a back-end server. This would create an ideal user experience.
+- **Standalone Buyer App** - While a *Maker* must run a copy of `avax-dex` in order to create and complete trades, a *Taker* does not. With additional work, it would be possible to make a stand-alone, non-custodial Android app that allows users to browse the market and buy tokens, without any need for a back-end server. This would create an ideal user experience.
 - **Allow Buy Orders** - Currently the app is only designed for *selling* tokens. But the SWaP protocol can also support *buy* Orders. Said another way, Makers only create Orders to sell tokens, but Makers could also create Orders to buy tokens. This additional functionality would allow for a more expressive market.
